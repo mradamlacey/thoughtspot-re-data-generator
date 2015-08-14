@@ -1,0 +1,430 @@
+{
+    "lease-building-availability": {
+        "properties": {
+            
+            "LEASE_BUILDING_AVAILABILITY_ID":{
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"                
+            },
+            
+            "PROPERTY_ID": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "REGION_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "MARKET_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+             "SUBMARKET_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "DISTRICT_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "NEIGHBORHOOD_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            
+            "TIMESTAMP": {
+              "type": "date"  
+            },
+            
+            "PRIMARY_PROPERTY_TYPE": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "PROPERTY_TYPE": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "TYPE": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "BUILDING_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "ADDRESS": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "LOCATION": {
+                "type": "geo_point",
+                "lat_lon": true,
+                "geohash": true,
+                "fielddata": {
+                    "format": "compressed",
+                    "precision": "3m"
+                }
+            },
+            "STREET_NUMBER1": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "PRE_STREET_DIRECTION": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "STREET_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "CITY": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "COUNTY": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "STATE_PROVINCE": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "POSTAL_CODE": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "COUNTRY": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "STATUS": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "CLASS": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "NET_RENTABLE_AREA": {
+                "type": "long"
+            },
+            "AVAIL_SF_DIRECT": {
+                "type": "long"
+            },
+            "AVAIL_SF_DIRECT_VACANT": {
+                "type": "long"
+            },
+            "AVAIL_SF_SUBLEASE_VACANT": {
+                "type": "long"
+            },
+            "AVAIL_SF_TOTAL": {
+                "type": "long"
+            },
+            "AVAIL_SF_TOTAL_VACANT": {
+                "type": "long"
+            },
+            "LEASE_RATEMAXDIRECT_MONTHLY": {
+                "type": "float"
+            },
+            "LEASE_RATEMAXSUBLEASE_MONTHLY": {
+                "type": "float"
+            },
+            "MAX_CONTIGUOUS_SF": {
+                "type": "long"
+            },
+            
+            "LEASE_DATE_AVAILABLE":{
+                "type": "date"
+            },
+            "LEASE_DATE_ON_MARKET":{
+                "type": "date"
+            },
+            "LEASE_SIGNED_DATE":{
+                "type": "date"
+            },
+            
+            "LEASE_AGENCY": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "ASSET_MANAGER": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            }
+        }
+    }
+}

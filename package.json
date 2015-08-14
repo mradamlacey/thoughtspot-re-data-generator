@@ -1,0 +1,21 @@
+{
+  "name": "thoughtspot-poc-data-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "faker": "^3.0.1",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "nconf": "^0.7.2",
+    "q": "^1.4.1",
+    "request": "^2.60.0",
+    "yargs": "^3.18.0"
+  }
+}

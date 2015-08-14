@@ -1,0 +1,53 @@
+{
+	"_index": "thoughtspot-poc",
+	"_type": "lease-building-availability",
+	"_id": "{{objectId()}}",
+	"LEASE_BUILDING_AVAILABILITY_ID": "{{objectId()}}",
+	"PROPERTY_ID": "{{objectId()}}",
+	"REGION_NAME": "{{state()}} Area",
+	"MARKET_NAME": "{{county()}}",
+	"SUBMARKET_NAME": "{{city()}}",
+	"DISTRICT_NAME": "{{city()}}",
+	"NEIGHBORHOOD_NAME": "{{city()}}",
+
+	"TIMESTAMP": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	"PRIMARY_PROPERTY_TYPE": "{{choose('Office', 'Retail', 'Industrial')}}",
+	"PROPERTY_TYPE": "{{choose('Office', 'Retail', 'Industrial')}}",
+	"TYPE": "lease",
+	
+	"BUILDING_NAME": "{{company()}} Plaza",
+	"STREETNUMBER1": "{{streetNumber()}}",
+	"PRE_STREET_DIRECTION": "{{streetDirection()}}",
+	"STREET_NAME": "{{street()}}",
+	"CITY_NAME": "{{city()}}",
+	"COUNTY": "{{county()}}",
+	"STATE_PROVINCE": "{{stateAbbr()}}",
+	"POSTAL_CODE": "{{zipCode()}}",
+	"COUNTRY": "United States",
+	"ADDRESS": "{{context('STREETNUMBER1')}} {{context('STREET_NAME')}} {{context('CITY_NAME')}} {{context('STATE_PROVINCE')}} {{context('POSTAL_CODE')}}",
+	"LOCATION": "{{latLon()}}",
+	"YEARBUILT": "{{numberBetween(1900,2015)}}",
+	"CLASS": "{{choose('A', 'B', 'C', 'D')}}",
+	"STATUS": "{{choose('Demolished', 'Under Construction', 'Existing', 'Existing', 'Existing', 'Existing')}}",
+	
+	"NET_RENTABLE_AREA": "{{numberBetween(10000, 5000000)}}",
+
+	"AVAIL_SF_DIRECT": "{{numberBetween(10000, 5000000)}}",
+	"AVAIL_SF_DIRECT_VACANT": "{{numberBetween(10000, 5000000)}}",
+	"AVAIL_SF_SUBLEASE": "{{numberBetween(10000, 5000000)}}",
+	"AVAIL_SF_SUBLEASE_VACANT": "{{numberBetween(10000, 5000000)}}",
+	"AVAIL_SF_TOTAL": "{{numberBetween(10000, 5000000)}}",
+	"AVAIL_SF_TOTAL_VACANT": "{{numberBetween(10000, 5000000)}}",	
+	
+	"LEASE_RATEMAXDIRECT_MONTHLY": "{{amount()}}",
+	"LEASE_RATEMAXSUBLEASE_MONTHLY": "{{amount()}}",
+	
+	"MAX_CONTIGUOUS_SF": "{{numberBetween(10000, 50000)}}",
+	
+	"LEASE_DATE_AVAILABLE": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	"LEASE_DATE_ON_MARKET": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	"LEASE_SIGNED_DATE": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	
+	"LEASE_AGENCY": "{{company()}}",
+	"ASSET_MANAGER": "{{company()}}"
+}
