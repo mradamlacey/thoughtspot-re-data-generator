@@ -62,6 +62,11 @@ var sendBulkUpdateRequest = function(index, type, bulkData, numDocuments){
         var response = JSON.parse(body.toString());
         
         //console.log(util.inspect(response, {depth: 1} ));
+        if(!response.items){
+            console.log(colors.red('Invalid bulk response received:\n ' + util.inspect(response, {depth: 3})));
+            throw new Error('Invalid bulk response');
+        }
+        
         console.log('Bulk response took: ' + response.took + '; items: ' + response.items.length);
         
         var numErrors = 0;

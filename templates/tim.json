@@ -1,0 +1,18 @@
+{
+	"_index": "thoughtspot-poc",
+	"_type": "tim",
+	"_id": "{{objectId()}}",
+	"TIM_ID": "{{objectId()}}",
+	"COMPANY_NAME": "{{company()}}",
+	"PROPERTY_TYPE": "{{choose('Office', 'Retail', 'Industrial')}}",
+	"REGION_NAME": "{{state()}} Area",
+	"TIMESTAMP": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	"CURRENTLOCATION": "{{state()}} Area",
+	
+	"MIN_SPACE_REQUIRED": "{{numberBetween(5000, 1000000)}}",
+    "MAX_SPACE_REQUIRED": "{{numberBetween(5000, 1000000)}}",
+	
+	"TARGET_MOVE_DATE": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	
+	"AGENT_COMPANY": "{{company()}}"
+}

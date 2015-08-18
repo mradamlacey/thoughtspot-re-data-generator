@@ -1,0 +1,53 @@
+{
+    "lease-comp": {
+        "properties": {
+            
+            "LEASE_AVAILABILITY_ID":{
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"                
+            },
+            
+            "TIM_ID": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            
+            "TIMESTAMP": {
+              "type": "date"  
+            },
+            
+            "LEASED_SF": {
+                "type": "long"
+            },
+            "RENT_RATE_MONTHLY": {
+                "type": "float"
+            },
+           
+            "OCCUPANCY_DATE":{
+                "type": "date"
+            },
+            "LEASE_SIGNED_DATE":{
+                "type": "date"
+            },
+            
+            "LEASE_AGENCY": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            }
+        }
+    }
+}

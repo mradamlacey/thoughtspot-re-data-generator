@@ -255,7 +255,7 @@ module.exports.generateFromTemplate = function(templateName, contextData, limit,
 		// console.log('date between: ' + fromDate + ' to ' + toDate);
         var newDate = faker.date.between(fromDate, toDate);
 		
-		return moment(newDate).format();
+		return moment(newDate).format('YYYY-MM-DD');
 	};
 	
 	var choose = function(){

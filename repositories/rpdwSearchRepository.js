@@ -52,3 +52,50 @@ module.exports.getLeaseBuildingAvailabilities = function(marketName, limit){
 
     return deferred.promise;
 }
+
+module.exports.getTenantsInMarkets = function(limit, marketName){
+	
+    limit = limit ? limit : 100;
+    
+	var deferred = q.defer();
+    console.log(colors.gray('Requesting TIMs (' + limit + ')'));
+    
+    var requestData = {
+      query: {
+          match_all: {}
+      },
+      filter: {
+          term: { 'markets.raw': marketName }
+      },
+      size: limit 
+    };
+    
+    if(!marketName){
+        delete requestData.filter;
+    }
+    
+    var options = {
+        method: 'POST',
+        url: 'http://' + config.get('elasticsearch:hosts')[0] + '/' + config.get('elasticsearch:rpdwSearchIndex') + '/tim/_search',
+        json: true,
+        headers: { contentType: 'application/json' },
+        body: requestData
+    };
+
+    if(config.get('http:proxy')){
+        options.proxy = config.get('http:proxy');
+    }
+
+    request(options, function(err, res, body){
+        if(err){
+            return deferred.reject(err);
+        }
+        console.log('Resp: ');
+        console.log(util.inspect(body, {depth: 3}));
+        //var response = JSON.parse(body.toString());
+
+        deferred.resolve(body);
+    });
+
+    return deferred.promise;
+}

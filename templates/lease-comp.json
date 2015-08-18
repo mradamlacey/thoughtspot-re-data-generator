@@ -1,0 +1,17 @@
+{
+	"_index": "thoughtspot-poc",
+	"_type": "lease-comp",
+	"_id": "{{objectId()}}",
+	"LEASE_AVAILABILITY_ID": "{{objectId()}}",
+	"TIM_ID": "{{objectId()}}",
+	
+	"TIMESTAMP": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	
+	"LEASED_SF": "{{numberBetween(10000, 5000000)}}",	
+	"RENT_RATE_MONTHLY": "{{amount()}}",
+		
+	"OCCUPANCY_DATE": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	"LEASE_SIGNED_DATE": "{{dateBetween('2005-01-01', '2015-08-13')}}",
+	
+	"LEASE_AGENCY": "{{company()}}"
+}

@@ -1,9 +1,10 @@
 {
 	"elasticsearch": {
         "hosts": [
-            "usadcpdm63.tnd.us.cbre.net:9200"
+            "usadcpdm65.tnd.us.cbre.net:9200"
         ],
-        "rpdwSearchIndex": "rpdw-dev-qa"
+        "rpdwSearchIndex": "rpdw",
+        "thoughtspotIndex": "thoughtspot-poc"
     },
     "http":{
         "proxy": "http://localhost:8888"

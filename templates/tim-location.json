@@ -1,0 +1,10 @@
+{
+	"_index": "thoughtspot-poc",
+	"_type": "tim-location",
+	"_id": "{{objectId()}}",
+	"TIM_ID": "{{objectId()}}",
+	"MARKET_NAME": "{{state()}} Market",
+	"SUBMARKET_NAME": "{{city()}} Submarket",
+	"DISTRICT_NAME": "{{street()}} District",
+	"NEIGHBORHOOD_NAME": "{{street()}} Neighborhood"
+}

@@ -1,0 +1,91 @@
+{
+    "tim-location": {
+        "properties": {
+            "TIM_ID": {
+                "type": "string",
+                "index_analyzer": "text_keyword",
+                "search_analyzer": "text_keyword"
+            },
+            "MARKET_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+            "SUBMARKET_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+                        "DISTRICT_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            },
+                        "NEIGHBORHOOD_NAME": {
+                "type": "string",
+                "index_analyzer": "text_with_autocomplete_analyzer",
+                "search_analyzer": "text_standard_analyzer",
+                "fields": {
+                    "sort": {
+                        "type": "string",
+                        "analyzer": "text_sortable"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "partial_matching": {
+                        "type": "string",
+                        "index_analyzer": "text_with_partial_matching_analyzer",
+                        "search_analyzer": "text_standard_analyzer"
+                    }
+                }
+            }            
+        }
+    }
+}
